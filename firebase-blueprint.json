@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Represents a user in the application",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "status": { "type": "string", "enum": ["online", "away", "busy", "offline"] },
+        "bio": { "type": "string" },
+        "lastSeen": { "type": "number" },
+        "privacy": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string", "enum": ["everyone", "friends", "nobody"] },
+            "bio": { "type": "string", "enum": ["everyone", "friends", "nobody"] },
+            "activityFeed": { "type": "string", "enum": ["everyone", "friends", "nobody"] }
+          }
+        }
+      },
+      "required": ["id", "name", "avatar", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile data"
+    }
+  }
+}

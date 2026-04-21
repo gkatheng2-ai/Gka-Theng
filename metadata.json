@@ -1,0 +1,13 @@
+{
+  "name": "Remix: The Chat",
+  "description": "A high-performance real-time chat application with group messaging, media sharing, and end-to-end encryption.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "real-time chat",
+    "media sharing",
+    "end-to-end encryption"
+  ]
+}
